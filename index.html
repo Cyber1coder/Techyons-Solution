@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salary Form</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f1f3f6;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .form-container{
+      width:100%;
+      max-width:800px;
+      background:#fff;
+      padding:40px;
+      border-radius:14px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      font-size:26px;
+      margin-bottom:25px;
+      color:#111827;
+    }
+
+    .section{
+      margin-bottom:45px;
+    }
+
+    .input-box{
+      margin-bottom:20px;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+      font-weight:600;
+      color:#374151;
+    }
+
+    .input-box input,
+    .input-box select{
+      width:100%;
+      height:55px;
+      border:1px solid #d1d5db;
+      border-radius:10px;
+      padding:0 16px;
+      font-size:15px;
+      outline:none;
+      transition:0.3s;
+      background:#fff;
+    }
+
+    .input-box input:focus,
+    .input-box select:focus{
+      border-color:#2563eb;
+      box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    .row{
+      display:flex;
+      gap:20px;
+    }
+
+    .row .input-box{
+      flex:1;
+    }
+
+    .radio-wrapper{
+      display:flex;
+      gap:25px;
+      margin-top:10px;
+      margin-bottom:20px;
+    }
+
+    .radio-item{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .radio-item input{
+      width:18px;
+      height:18px;
+    }
+
+    .submit-btn{
+      width:100%;
+      height:58px;
+      border:none;
+      border-radius:12px;
+      background:#0d6efd;
+      color:#fff;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .submit-btn:hover{
+      background:#0b5ed7;
+    }
+
+    .success{
+      margin-top:20px;
+      padding:14px;
+      border-radius:10px;
+      background:#d1fae5;
+      color:#065f46;
+      display:none;
+    }
+
+    @media(max-width:700px){
+
+      .row{
+        flex-direction:column;
+        gap:0;
+      }
+
+      .form-container{
+        padding:25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="form-container">
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <h2>Company & Title Information</h2>
+
+      <div class="input-box">
+        <label>Company</label>
+        <input type="text" id="company" placeholder="Enter company">
+      </div>
+
+      <div class="input-box">
+        <label>Title</label>
+        <input type="text" id="title" placeholder="Enter title">
+      </div>
+
+      <div class="input-box">
+        <label>Job Family</label>
+
+        <select id="jobFamily">
+          <option value="">Select Job Family</option>
+          <option>Engineering</option>
+          <option>Product</option>
+          <option>Marketing</option>
+          <option>Finance</option>
+          <option>HR</option>
+        </select>
+      </div>
+
+      <div class="row">
+
+        <div class="input-box">
+          <label>Specialization</label>
+          <input type="text" placeholder="Frontend, Backend...">
+        </div>
+
+        <div class="input-box">
+          <label>Level</label>
+          <input type="text" placeholder="Junior / Senior">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+
+      <h2>Work Experience & Location</h2>
+
+      <label style="font-weight:600;">
+        Compensation details are from:
+      </label>
+
+      <div class="radio-wrapper">
+
+        <div class="radio-item">
+          <input type="radio" name="offerType" checked>
+          <span>New Offer</span>
+        </div>
+
+        <div class="radio-item">
+          <input type="radio" name="offerType">
+          <span>Employee</span>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-box">
+          <label>Month Received</label>
+
+          <select>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option selected>May</option>
+            <option>June</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label>Year</label>
+
+          <select>
+            <option>2024</option>
+            <option>2025</option>
+            <option selected>2026</option>
+            <option>2027</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-box">
+          <label>Years at Company</label>
+          <input type="number" placeholder="0">
+        </div>
+
+        <div class="input-box">
+          <label>Years of Experience</label>
+          <input type="number" placeholder="2">
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-box">
+          <label>Location</label>
+          <input type="text" placeholder="City, Country">
+        </div>
+
+        <div class="input-box">
+          <label>Arrangement</label>
+
+          <select>
+            <option>In Office</option>
+            <option>Remote</option>
+            <option>Hybrid</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="submit-btn" id="submitBtn">
+      Submit Salary
+    </button>
+
+    <div class="success" id="successMsg">
+      Form submitted successfully!
+    </div>
+
+  </div>
+
+  <script>
+
+    const submitBtn = document.getElementById("submitBtn");
+    const successMsg = document.getElementById("successMsg");
+
+    submitBtn.addEventListener("click", function(){
+
+      const company = document.getElementById("company").value;
+      const title = document.getElementById("title").value;
+
+      if(company === "" || title === ""){
+        alert("Please fill all required fields");
+        return;
+      }
+
+      successMsg.style.display = "block";
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3000);
+
+      console.log("Form Submitted");
+    });
+
+  </script>
+
+</body>
+</html>
