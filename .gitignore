@@ -1,0 +1,20 @@
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Local temporary salary submissions
+new_entry.json
+test_classify.py
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.env

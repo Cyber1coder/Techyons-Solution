@@ -141,7 +141,7 @@
 
   <div class="form-container">
 
-    <!-- SECTION 1 -->
+    <!-- SECTION 1: Company & Title Information -->
     <div class="section">
       <h2>Company & Title Information</h2>
 
@@ -155,37 +155,46 @@
         <input type="text" id="title" placeholder="Enter title">
       </div>
 
-      <div class="input-box">
-        <label>Job Family</label>
-
-        <select id="jobFamily">
-          <option value="">Select Job Family</option>
-          <option>Engineering</option>
-          <option>Product</option>
-          <option>Marketing</option>
-          <option>Finance</option>
-          <option>HR</option>
-        </select>
-      </div>
-
       <div class="row">
-
         <div class="input-box">
-          <label>Specialization</label>
-          <input type="text" placeholder="Frontend, Backend...">
+          <label>Job Family</label>
+          <select id="jobFamily">
+            <option value="">Select Job Family</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+            <option value="DevOps Engineer">DevOps Engineer</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Product Designer">Product Designer</option>
+          </select>
         </div>
 
         <div class="input-box">
           <label>Level</label>
-          <input type="text" placeholder="Junior / Senior">
+          <input type="text" id="level" placeholder="e.g. IC3, IC4, Senior, Director">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-box">
+          <label>Specialization (Focus Tag)</label>
+          <input type="text" id="focusTag" placeholder="e.g. Frontend, Backend, Machine Learning">
         </div>
 
+        <div class="input-box">
+          <label>Education</label>
+          <select id="education">
+            <option value="Bachelor's">Bachelor's Degree</option>
+            <option value="Master's">Master's Degree</option>
+            <option value="PhD">PhD</option>
+            <option value="High School">High School</option>
+          </select>
+        </div>
       </div>
     </div>
 
-    <!-- SECTION 2 -->
+    <!-- SECTION 2: Work Experience & Location -->
     <div class="section">
-
       <h2>Work Experience & Location</h2>
 
       <label style="font-weight:600;">
@@ -193,117 +202,197 @@
       </label>
 
       <div class="radio-wrapper">
-
         <div class="radio-item">
-          <input type="radio" name="offerType" checked>
+          <input type="radio" name="compPerspective" value="offer" checked>
           <span>New Offer</span>
         </div>
-
         <div class="radio-item">
-          <input type="radio" name="offerType">
+          <input type="radio" name="compPerspective" value="current">
           <span>Employee</span>
         </div>
-
       </div>
 
       <div class="row">
-
         <div class="input-box">
           <label>Month Received</label>
-
-          <select>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option selected>May</option>
-            <option>June</option>
+          <select id="offerMonth">
+            <option value="Jan">January</option>
+            <option value="Feb">February</option>
+            <option value="Mar">March</option>
+            <option value="Apr">April</option>
+            <option value="May" selected>May</option>
+            <option value="Jun">June</option>
+            <option value="Jul">July</option>
+            <option value="Aug">August</option>
+            <option value="Sep">September</option>
+            <option value="Oct">October</option>
+            <option value="Nov">November</option>
+            <option value="Dec">December</option>
           </select>
         </div>
 
         <div class="input-box">
           <label>Year</label>
-
-          <select>
-            <option>2024</option>
-            <option>2025</option>
-            <option selected>2026</option>
-            <option>2027</option>
+          <select id="offerYear">
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025" selected>2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
           </select>
         </div>
-
       </div>
 
       <div class="row">
+        <div class="input-box">
+          <label>Years of Experience</label>
+          <input type="number" id="yearsOfExperience" placeholder="2" min="0">
+        </div>
 
         <div class="input-box">
           <label>Years at Company</label>
-          <input type="number" placeholder="0">
+          <input type="number" id="yearsAtCompany" placeholder="0" min="0">
         </div>
 
         <div class="input-box">
-          <label>Years of Experience</label>
-          <input type="number" placeholder="2">
+          <label>Years at Level</label>
+          <input type="number" id="yearsAtLevel" placeholder="0" min="0">
         </div>
-
       </div>
 
       <div class="row">
-
         <div class="input-box">
           <label>Location</label>
-          <input type="text" placeholder="City, Country">
+          <input type="text" id="location" placeholder="City, Country">
         </div>
 
         <div class="input-box">
           <label>Arrangement</label>
+          <select id="workArrangement">
+            <option value="onsite">Onsite</option>
+            <option value="remote">Remote</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+        </div>
+      </div>
 
-          <select>
-            <option>In Office</option>
-            <option>Remote</option>
-            <option>Hybrid</option>
+      <div class="row">
+        <div class="input-box">
+          <label>Employment Type</label>
+          <select id="employmentType">
+            <option value="full-time">Full-time</option>
+            <option value="contract">Contract</option>
+            <option value="part-time">Part-time</option>
+            <option value="intern">Intern</option>
           </select>
         </div>
 
+        <div class="input-box">
+          <label>Gender (Optional)</label>
+          <select id="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Non-binary">Non-binary</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Compensation Details -->
+    <div class="section">
+      <h2>Compensation Details</h2>
+
+      <div class="row">
+        <div class="input-box" style="flex: 2;">
+          <label>Base Salary</label>
+          <input type="number" id="baseSalary" placeholder="Enter base salary" min="0">
+        </div>
+
+        <div class="input-box" style="flex: 1;">
+          <label>Currency</label>
+          <select id="baseSalaryCurrency">
+            <option value="USD" selected>USD</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+          </select>
+        </div>
       </div>
 
+      <div class="row">
+        <div class="input-box">
+          <label>Avg Annual Stock Grant Value (USD)</label>
+          <input type="number" id="avgAnnualStockGrantValue" placeholder="0" min="0">
+        </div>
+
+        <div class="input-box">
+          <label>Avg Annual Bonus Value</label>
+          <input type="number" id="avgAnnualBonusValue" placeholder="0" min="0">
+        </div>
+
+        <div class="input-box">
+          <label>Target Bonus %</label>
+          <input type="number" id="annualTargetBonusPercentage" placeholder="0" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="input-box">
+        <label>Total Compensation (Auto-calculated Local Currency)</label>
+        <input type="text" id="totalCompensation" readonly placeholder="Calculated automatically" style="background: #f9fafb; font-weight: bold; color: #2563eb;">
+      </div>
+    </div>
+
+    <!-- SECTION 4: Validation Results Block -->
+    <div id="resultsContainer" style="display: none; margin-top: 30px; margin-bottom: 30px; padding: 25px; border-radius: 12px; border: 1px solid #d1d5db; background: #f9fafb; transition: 0.3s;">
+      <h3 style="font-size: 20px; margin-bottom: 15px; color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px;">Validation Results</h3>
+      
+      <!-- Verdict Badge -->
+      <div id="verdictBadge" style="display: inline-block; padding: 10px 20px; border-radius: 20px; font-weight: bold; font-size: 16px; margin-bottom: 20px; text-transform: uppercase; color: #fff;">
+        Approved
+      </div>
+      
+      <!-- Consistency Scores -->
+      <div style="margin-bottom: 10px;">
+        <span style="font-weight: bold; color: #374151;">Consistency Score:</span>
+        <span id="resConsistencyScore" style="font-size: 16px; font-weight: bold; color: #2563eb; margin-left: 5px;">-</span>
+      </div>
+      
+      <div style="margin-bottom: 20px;">
+        <span style="font-weight: bold; color: #374151;">User Trust Score:</span>
+        <span id="resTrustScore" style="font-size: 16px; font-weight: bold; color: #10b981; margin-left: 5px;">-</span>
+      </div>
+      
+      <!-- Anomaly Flags -->
+      <div id="reasonsBlock" style="display: none; margin-bottom: 20px; padding: 15px; border-radius: 8px; background: #fdf2f2; border: 1px solid #fde8e8;">
+        <h4 style="font-size: 14px; font-weight: bold; color: #9b1c1c; margin-bottom: 8px;">Triggered Flags:</h4>
+        <ul id="reasonsList" style="list-style-type: disc; margin-left: 20px; color: #b91c1c; font-size: 14px; line-height: 1.5;">
+          <!-- dynamic flags will be injected here -->
+        </ul>
+      </div>
+
+      <!-- Segment Peer Details -->
+      <div id="segmentStatsBlock" style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #d1d5db; font-size: 14px; color: #4b5563;">
+        <div><strong>Segment:</strong> <span id="resSegmentName">-</span></div>
+        <div style="margin-top: 5px;"><strong>Peer Count:</strong> <span id="resSegmentSize">-</span></div>
+        <div style="margin-top: 5px;"><strong>Average Segment Salary:</strong> <span id="resSegmentAvg">-</span></div>
+      </div>
     </div>
 
     <button class="submit-btn" id="submitBtn">
-      Submit Salary
+      Submit & Validate Salary
     </button>
 
     <div class="success" id="successMsg">
-      Form submitted successfully!
+      Salary submitted and validated!
     </div>
 
   </div>
 
-  <script>
-
-    const submitBtn = document.getElementById("submitBtn");
-    const successMsg = document.getElementById("successMsg");
-
-    submitBtn.addEventListener("click", function(){
-
-      const company = document.getElementById("company").value;
-      const title = document.getElementById("title").value;
-
-      if(company === "" || title === ""){
-        alert("Please fill all required fields");
-        return;
-      }
-
-      successMsg.style.display = "block";
-
-      setTimeout(() => {
-        successMsg.style.display = "none";
-      }, 3000);
-
-      console.log("Form Submitted");
-    });
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
