@@ -1,8 +1,74 @@
-# Salary Consistency Validator & Outlier Detector
+**Salary Consistency Validator & Outlier Detector**
 
-An elegant, end-to-end web application that leverages statistical machine learning and rule-based validation to verify the consistency of salary and compensation submissions in real-time.
+**Overview**
 
----
+Salary Consistency Validator & Outlier Detector is an AI-assisted data validation platform designed to improve the reliability of crowdsourced compensation data. The system combines rule-based validation, anomaly detection, duplicate detection, and market benchmarking to identify suspicious, inconsistent, or potentially fraudulent salary submissions in real time.
+
+**Why It Matters**
+
+Crowdsourced compensation platforms provide valuable salary transparency, but data quality issues such as typographical errors, duplicate submissions, and unrealistic compensation claims can significantly reduce trust in the dataset.
+
+This solution serves as an intelligent validation layer that automatically evaluates incoming salary records before they are accepted into the database, ensuring higher accuracy and reliability.
+
+**Key Features**
+
+Rule-Based Consistency Validation
+
+Detects logical inconsistencies in submitted records, including:
+
+* Years at level exceeding years at company
+* Unrealistic experience-to-seniority mappings
+* Invalid compensation structures
+* Missing or conflicting data fields
+
+Anomaly Detection with Local Outlier Factor (LOF)
+
+Applies machine learning–based anomaly detection to identify salary entries that significantly deviate from peer submissions within the same segment.
+
+Segmentation Criteria:
+
+* Job Family
+* Seniority Level
+* Country/Region
+
+**Duplicate Submission Detection**
+
+Prevents spam and repeated entries using:
+
+* Text vectorization
+* Cosine similarity matching
+* Near-duplicate record identification
+
+Global Salary Normalization
+
+Supports multi-currency compensation data and converts values into a standardized USD equivalent for accurate cross-market comparison.
+
+Supported currencies:
+
+* USD
+* INR
+* EUR
+* GBP
+* CAD
+* AUD
+
+**Market Benchmark Validation**
+
+Compares submitted compensation against benchmark ranges to identify:
+
+* Unrealistically high salaries
+* Suspiciously low compensation claims
+* Potential data entry errors
+
+Trust Scoring System
+
+Generates a confidence score for each submission based on:
+
+* Validation results
+* Outlier probability
+* Duplicate likelihood
+* Benchmark alignment
+
 
 ## 💡 Why This is Useful
 
